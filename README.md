@@ -21,8 +21,8 @@ Pour travailler sur ce projet en local avec **votre propre projet Supabase** :
 
 ```sh
 # 1. Cloner le dépôt
-git clone https://github.com/eddinos2/hyperzenof.git
-cd hyperzenof
+git clone https://github.com/eddinos2/hyperzenof-clean.git
+cd hyperzenof-clean
 
 # 2. Installer les dépendances frontend
 npm install

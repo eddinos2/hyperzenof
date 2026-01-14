@@ -17,8 +17,8 @@ et recréer la base de données à l'identique, sans dépendre de l'environnemen
 ### 2. Cloner le projet
 
 ```sh
-git clone https://github.com/eddinos2/hyperzenof.git
-cd hyperzenof
+git clone https://github.com/eddinos2/hyperzenof-clean.git
+cd hyperzenof-clean
 npm install
 ```
 
