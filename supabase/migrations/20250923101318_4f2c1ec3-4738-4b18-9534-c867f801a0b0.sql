@@ -1,0 +1,2 @@
+-- Supprimer les doublons de campus (garder les versions en majuscules)
+DELETE FROM campus WHERE name IN ('Boulogne', 'Douai', 'Jaurès', 'Nice', 'Parmentier', 'Picpus', 'Roquette', 'Saint-Sébastien', 'Sentier');

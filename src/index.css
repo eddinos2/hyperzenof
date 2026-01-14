@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neo-Brutalist Design System for AURLOM BTS+ School Management */
+
+@layer base {
+  :root {
+    /* Brand Colors - HSL Format */
+    --brand-aurlom: 260 100% 60%; /* Purple AURLOM BTS+ */
+    --brand-education: 150 100% 40%; /* Green Education */
+    --brand-success: 120 60% 50%; /* Success Green */
+    --brand-warning: 35 100% 50%; /* Warning Orange */
+    --brand-error: 0 80% 60%; /* Error Red */
+    
+    /* Neo-Brutalist Base Colors */
+    --background: 0 0% 98%; /* Off-white */
+    --foreground: 220 25% 10%; /* Dark text */
+    --surface: 0 0% 100%; /* Pure white */
+    
+    /* UI Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    
+    /* Interactive Elements */
+    --primary: 260 100% 60%; /* AURLOM BTS+ Purple */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 260 100% 50%;
+    --primary-active: 260 100% 45%;
+    
+    --secondary: 220 15% 85%; /* Light Gray */
+    --secondary-foreground: 220 25% 10%;
+    --secondary-hover: 220 15% 80%;
+    
+    --accent: 280 80% 70%; /* Light Purple Accent */
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 280 80% 60%;
+    
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 15% 40%;
+    
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 25% 10%;
+    --border-light: 220 15% 75%;
+    --input: 0 0% 100%;
+    --ring: 260 100% 60%;
+    
+    /* Shadows */
+    --shadow-brutal: 4px 4px 0px hsl(220 25% 10%);
+    --shadow-brutal-lg: 8px 8px 0px hsl(220 25% 10%);
+    --shadow-brutal-hover: 6px 6px 0px hsl(220 25% 10%);
+    
+    /* Neo-Brutalist Specific */
+    --radius: 8px;
+    --border-width: 2px;
+    --border-width-thick: 4px;
+    
+    /* Status Colors */
+    --status-pending: 35 100% 50%;
+    --status-prevalidated: 260 100% 60%;
+    --status-validated: 120 60% 50%;
+    --status-paid: 150 100% 40%;
+    --status-rejected: 0 80% 60%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 0 0% 95%;
+    --surface: 220 25% 10%;
+    
+    --card: 220 25% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 260 100% 70%;
+    --primary-foreground: 220 25% 8%;
+    --primary-hover: 260 100% 60%;
+    --primary-active: 260 100% 55%;
+    
+    --secondary: 220 15% 25%;
+    --secondary-foreground: 0 0% 95%;
+    --secondary-hover: 220 15% 30%;
+    
+    --accent: 280 80% 80%;
+    --accent-foreground: 220 25% 8%;
+    --accent-hover: 280 80% 70%;
+    
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+    
+    --destructive: 0 80% 70%;
+    --destructive-foreground: 220 25% 8%;
+    
+    --border: 0 0% 95%;
+    --border-light: 220 15% 30%;
+    --input: 220 25% 10%;
+    --ring: 260 100% 70%;
+    
+    --shadow-brutal: 4px 4px 0px hsl(0 0% 95%);
+    --shadow-brutal-lg: 8px 8px 0px hsl(0 0% 95%);
+    --shadow-brutal-hover: 6px 6px 0px hsl(0 0% 95%);
+  }
+
+  /* Seasonal Theme Styles */
+  .theme-halloween {
+    --primary: 25 95% 53%; /* Orange */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --background: 20 14% 4%; /* Very dark brown */
+    --foreground: 25 95% 53%; /* Orange */
+    --muted: 24 9% 10%; /* Dark brown */
+    --accent: 25 95% 53%; /* Orange */
+    --brand-aurlom: 25 95% 53%; /* Orange */
+    --border: 25 95% 53%; /* Orange borders */
+    --card: 20 14% 6%; /* Dark card background */
+    --card-foreground: 25 95% 53%; /* Orange text */
+    --shadow-brutal: 4px 4px 0px hsl(25 95% 53%);
+  }
+
+  .theme-christmas {
+    --primary: 142 76% 36%; /* Green */
+    --primary-foreground: 0 0% 100%; /* White */
+    --background: 0 100% 97%; /* Very light red */
+    --foreground: 142 76% 36%; /* Green */
+    --muted: 0 84% 60% / 0.1; /* Light red */
+    --accent: 348 83% 47%; /* Red */
+    --brand-aurlom: 348 83% 47%; /* Red */
+    --border: 142 76% 36%; /* Green borders */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 142 76% 36%; /* Green text */
+    --shadow-brutal: 4px 4px 0px hsl(348 83% 47%);
+  }
+
+  .theme-newyear {
+    --primary: 43 96% 56%; /* Gold */
+    --primary-foreground: 220 26% 14%; /* Dark blue */
+    --background: 220 26% 14%; /* Dark blue */
+    --foreground: 43 96% 56%; /* Gold */
+    --muted: 220 13% 18%; /* Slightly lighter dark blue */
+    --accent: 213 94% 68%; /* Light blue */
+    --brand-aurlom: 43 96% 56%; /* Gold */
+    --border: 43 96% 56%; /* Gold borders */
+    --card: 220 26% 16%; /* Dark blue cards */
+    --card-foreground: 43 96% 56%; /* Gold text */
+    --shadow-brutal: 4px 4px 0px hsl(213 94% 68%);
+  }
+
+  .theme-valentine {
+    --primary: 330 81% 60%; /* Pink */
+    --primary-foreground: 0 0% 100%; /* White */
+    --background: 349 100% 98%; /* Very light pink */
+    --foreground: 330 81% 60%; /* Pink */
+    --muted: 329 100% 94%; /* Light pink */
+    --accent: 348 83% 47%; /* Red */
+    --brand-aurlom: 330 81% 60%; /* Pink */
+    --border: 330 81% 60%; /* Pink borders */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 330 81% 60%; /* Pink text */
+    --shadow-brutal: 4px 4px 0px hsl(348 83% 47%);
+  }
+
+  .theme-spring {
+    --primary: 142 76% 36%; /* Green */
+    --primary-foreground: 0 0% 100%; /* White */
+    --background: 120 60% 97%; /* Very light green */
+    --foreground: 142 76% 36%; /* Green */
+    --muted: 120 60% 95%; /* Light green */
+    --accent: 84 81% 44%; /* Lime */
+    --brand-aurlom: 142 76% 36%; /* Green */
+    --border: 142 76% 36%; /* Green borders */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 142 76% 36%; /* Green text */
+    --shadow-brutal: 4px 4px 0px hsl(84 81% 44%);
+  }
+
+  .theme-summer {
+    --primary: 199 89% 48%; /* Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --background: 195 100% 98%; /* Very light blue */
+    --foreground: 199 89% 48%; /* Blue */
+    --muted: 195 100% 95%; /* Light blue */
+    --accent: 188 95% 43%; /* Cyan */
+    --brand-aurlom: 199 89% 48%; /* Blue */
+    --border: 199 89% 48%; /* Blue borders */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 199 89% 48%; /* Blue text */
+    --shadow-brutal: 4px 4px 0px hsl(188 95% 43%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  }
+}
+
+@layer components {
+  /* Neo-Brutalist Button Styles */
+  .btn-brutal {
+    @apply font-medium transition-all duration-200 ease-out;
+    border: var(--border-width) solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-brutal);
+  }
+  
+  .btn-brutal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+  }
+  
+  .btn-brutal:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(var(--border));
+  }
+  
+  /* Card Brutal Style */
+  .card-brutal {
+    border: var(--border-width) solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-brutal);
+    background: hsl(var(--card));
+  }
+  
+  /* Input Brutal Style */
+  .input-brutal {
+    border: var(--border-width) solid hsl(var(--border));
+    border-radius: var(--radius);
+    background: hsl(var(--input));
+    transition: all 200ms ease-out;
+  }
+  
+  .input-brutal:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.2);
+  }
+  
+  /* Status Badges */
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium rounded-md border-2;
+  }
+  
+  .status-pending {
+    @apply bg-orange-100 text-orange-800 border-orange-600;
+  }
+  
+  .status-prevalidated {
+    @apply bg-purple-100 text-purple-800 border-purple-600;
+  }
+  
+  .status-validated {
+    @apply bg-green-100 text-green-800 border-green-600;
+  }
+  
+  .status-paid {
+    @apply bg-emerald-100 text-emerald-800 border-emerald-600;
+  }
+  
+  .status-rejected {
+    @apply bg-red-100 text-red-800 border-red-600;
+  }
+  
+  /* Animations */
+  .animate-brutal-entrance {
+    animation: brutal-entrance 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  @keyframes brutal-entrance {
+    0% {
+      opacity: 0;
+      transform: translate(8px, 8px);
+      box-shadow: 0 0 0 hsl(var(--border));
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+      box-shadow: var(--shadow-brutal);
+    }
+  }
+  
+  /* Layout Utilities */
+  .container-brutal {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .grid-brutal {
+    @apply grid gap-4 md:gap-6;
+  }
+
+  /* Animations saisonnières */
+  @keyframes snowfall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1) rotate(180deg); opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 5px currentColor; }
+    50% { box-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+  }
+
+  /* Thème Halloween - animations spéciales */
+  .theme-halloween .animate-bounce {
+    animation: bounce 2s infinite, glow-pulse 3s infinite;
+  }
+
+  /* Thème Noël - effet neige */
+  .theme-christmas::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    animation: snowfall 10s linear infinite;
+    z-index: 1;
+  }
+
+  /* Thème Nouvel An - particules scintillantes */
+  .theme-newyear .animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, sparkle 2s ease-in-out infinite;
+  }
+
+  /* Amélioration des animations existantes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .seasonal-particle {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Mobile Breakpoints and Responsive Layout */
+  @media (max-width: 768px) {
+    .container-brutal {
+      padding: 0.75rem;
+    }
+    
+    .grid-brutal {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    
+    /* Compact card layout on mobile */
+    .card-brutal {
+      padding: 1rem;
+    }
+    
+    .btn-brutal {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+    }
+    
+    /* Navigation mobile optimizations */
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    
+    /* Form optimizations */
+    input, textarea, select {
+      min-height: 48px;
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Table responsiveness */
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+      min-width: 600px;
+    }
+    
+    /* Button sizing */
+    button {
+      min-height: 44px;
+      padding: 12px 16px;
+    }
+    
+    /* Modal/Dialog mobile fixes */
+    .dialog-content {
+      margin: 16px;
+      max-height: calc(100vh - 32px);
+      overflow-y: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Extra small mobile optimizations */
+    .container-brutal {
+      padding: 0.5rem;
+    }
+    
+    .card-brutal {
+      padding: 0.75rem;
+      margin: 0.25rem;
+    }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.125rem; }
+    
+    /* Stack buttons vertically on very small screens */
+    .button-group {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .button-group button {
+      width: 100%;
+    }
+  }
+
+  /* Dropdown overlay utility class */
+  .dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    pointer-events: none;
+  }
+
+  /* Enhanced mobile-first responsive utilities */
+  @media (hover: none) and (pointer: coarse) {
+    /* Touch device optimizations */
+    button:hover {
+      transform: none;
+    }
+    
+    .card-brutal:hover {
+      transform: none;
+    }
+    
+    /* Larger touch targets */
+    .touch-target {
+      min-height: 48px;
+      min-width: 48px;
+    }
+  }
+}

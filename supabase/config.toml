@@ -1,0 +1,27 @@
+# Le project_id sera automatiquement rempli lors de la commande 'supabase link --project-ref YOUR_PROJECT_ID'
+# Ne pas hardcoder votre project_id ici pour permettre à chaque développeur d'utiliser son propre projet
+# project_id = "YOUR_PROJECT_ID"
+
+[functions.bulk-import-teachers]
+verify_jwt = true
+
+[functions.reset-user-passwords]
+verify_jwt = true
+
+[functions.send-access-emails]
+verify_jwt = true
+
+[functions.create-user]
+verify_jwt = true
+
+[functions.import-invoice]
+verify_jwt = true
+
+[functions.create-real-users]
+verify_jwt = true
+
+[functions.assign-teachers]
+verify_jwt = true
+
+[functions.verify-login]
+verify_jwt = false
